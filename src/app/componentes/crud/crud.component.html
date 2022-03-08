@@ -1,31 +1,21 @@
 <div class="container" >
-    <form>
-        <div class="mb-3">
-          <label for="Usuario"  class="form-label" ng-model="Producto">Nombre Producto</label>
-          <input type="text" class="form-control"  formControlName="Producto" >
-        </div>
-        <div class="mb-3">
+    <form [formGroup]="FormularioRegistro" >
+      <div>
 
-            <label for="contra" class="form-label"  ng-model="Precio">Precio</label>
-            <input type="password" class="form-control"formControlName="Precio">
-          </div> 
-          <div class="mb-3">
+          <label  class="form-label" >Nombre Producto</label>
+          <input type="text" class="form-control"  formControlName="Producto" [(ngModel)]="productos.nom_producto" >
 
-            <label for="contra" class="form-label"  ng-model="Cantidad">Cantidad</label>
-            <input type="password" class="form-control"formControlName="Cantidad">
-          </div> 
-          <div class="mb-3" *ngFor="let post of posts">
+            <label  class="form-label" >Precio</label>
+            <input type="text" class="form-control"formControlName="Precio" [(ngModel)]="productos.precio">
+          
+            <label  class="form-label">Cantidad</label>
+            <input  type="text"  class="form-control" formControlName="Cantidad" [(ngModel)]="productos.cantidad">
 
-            <label for="contra" class="form-label"  ng-model="Categoria">Categoria</label>
-            <select name="cars" id="cars" class="form-control">
-                <option></option>
-                <option value="Comida">{{post.nom_categoria}} </option>
-                <option value="Bebidas">Bebidas</option>
-               
-            </select>
-          </div> 
-                         
-
+            <label class="form-label">Categoria</label>
+            <input  type="text"  class="form-control"  formControlName="Categoria" [(ngModel)]="productos.categoria">
+          </div>
+              <button (click)="crear()" class="btn btn-primary">Guardar</button>
+              <a  class="btn btn-danger">Cancelar</a>
       </form>
-      <button type="submit" class="btn btn-primary"  >Guardar</button>
-      <a  class="btn btn-danger">Cancelar</a>
+      
+      

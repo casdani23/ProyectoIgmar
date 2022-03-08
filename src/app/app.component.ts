@@ -15,7 +15,6 @@ import {  RestServiceService} from './rest-service.service'
 export class AppComponent{
    
   title="Registo"
-  posts=[] as any;
   constructor(private restservice:RestServiceService){
 
   }
@@ -52,14 +51,7 @@ showModal(){
 
 }
 
-evento(){
-  this.restservice.obtenerDatos2().subscribe((rest:any) =>{
-    this.posts=rest;
-  }); 
- 
-  
-   return this.restservice.obtenerDatos2()
-}
+
 
 
 }
