@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Practica Igmar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/src/app/componentes/registro/registro.component.css">
+    </head>
+    <body>
+      
+
+        <div class="container" ng-controller="formulario">
+            <form [formGroup]="FormularioRegistro">
+                
+               
+                <div class="mb-3">
+
+                
+
+                <div class="mb-3">
+                  <label for="Usuario"  class="form-label" ng-model="Usuario">Registrar Usuario</label>
+                  <input type="text" class="form-control"  formControlName="Usuario" >
+                </div>
+
+                    <label for="contra" class="form-label"  ng-model="password">Registro Password</label>
+                    <input type="password" class="form-control"formControlName="contra">
+                  </div>                
+
+              </form>
+              <button (click)="showModal()" (click)="onSubmit()"  class="btn btn-primary">Registrarme</button>
+              <a routerLink="/login" class="btn btn-danger">Iniciar Sesion</a>
+
+
+             
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,36 @@
+.imagen{
+    border: solid;
+    width: 10000px;
+    max-width: 1000px;
+    
+}
+#imagencarrusel{
+    width: 1600px;
+    height: 400px;
+    
+}
+#cafeteria{
+    margin-top: -500px;
+}
+.titulo{
+    text-align: center;
+}
+.linea{
+    width: 40px;
+    height: 2px;
+    
+}
+.card{
+    margin-top: 40px;
+    left: 20%;
+    border-radius: 10px;
+}
+#card1{
+    left: 60%;
+    margin-top: -170px;
+    border-radius: 10px;
+
+}
+h1{
+    color: orange;
+}

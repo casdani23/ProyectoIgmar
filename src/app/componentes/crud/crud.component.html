@@ -1,0 +1,31 @@
+<div class="container" >
+    <form>
+        <div class="mb-3">
+          <label for="Usuario"  class="form-label" ng-model="Producto">Nombre Producto</label>
+          <input type="text" class="form-control"  formControlName="Producto" >
+        </div>
+        <div class="mb-3">
+
+            <label for="contra" class="form-label"  ng-model="Precio">Precio</label>
+            <input type="password" class="form-control"formControlName="Precio">
+          </div> 
+          <div class="mb-3">
+
+            <label for="contra" class="form-label"  ng-model="Cantidad">Cantidad</label>
+            <input type="password" class="form-control"formControlName="Cantidad">
+          </div> 
+          <div class="mb-3" *ngFor="let post of posts">
+
+            <label for="contra" class="form-label"  ng-model="Categoria">Categoria</label>
+            <select name="cars" id="cars" class="form-control">
+                <option></option>
+                <option value="Comida">{{post.nom_categoria}} </option>
+                <option value="Bebidas">Bebidas</option>
+               
+            </select>
+          </div> 
+                         
+
+      </form>
+      <button type="submit" class="btn btn-primary"  >Guardar</button>
+      <a  class="btn btn-danger">Cancelar</a>
