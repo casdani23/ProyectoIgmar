@@ -1,8 +1,11 @@
 import { Component} from '@angular/core';
 import {  RestServiceService} from '../../rest-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert';
+
 
 import {Postproducto } from '../../PostProducto'
+import { categoria } from 'src/app/categoriamodel';
 
 @Component({
   selector: 'app-crud',
@@ -11,7 +14,6 @@ import {Postproducto } from '../../PostProducto'
 })
 export class CrudComponent {
   
-  resultado!:string;
   FormularioRegistro= new FormGroup({
 
     Producto: new FormControl(null,[Validators.required]),
@@ -20,8 +22,27 @@ export class CrudComponent {
     Categoria: new FormControl(null,[Validators.required]),
 
   })
-
+  showModal(){
+    if(this.FormularioRegistro.valid){
+      Swal({
+        title: "Producto Registrado",
+        icon: "success",
+      });
+    }
+    else{
+     Swal({
+       title:'Ocurrio un Error al ingresar un Producto',
+       icon:"warning"
+     })
+    }
+    
   
+  }
+  
+   
+    categorias:categoria[]|undefined;
+
+
     productos:Postproducto={
      
       "nom_producto":'',
@@ -31,15 +52,10 @@ export class CrudComponent {
     };
    
   constructor(private restservice:RestServiceService) {
-    {
-     
-   }
 
-   
-
-   
-   
-    
+    this.restservice.obtenerCategorias().subscribe((data:any)=>{
+      this.categorias=data;
+    })   
   }
 
   crear(){

@@ -13,6 +13,9 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { RestServiceService } from './rest-service.service';
 import { CrudComponent } from './componentes/crud/crud.component';
 import { AdministradorComponent } from './componentes/administrador/administrador.component';
+import { CategoriasComponent } from './componentes/categorias/categorias.component';
+import { MostrarPComponent } from './componentes/mostrar-p/mostrar-p.component';
+import { MostrarCComponent } from './componentes/mostrar-c/mostrar-c.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { AdministradorComponent } from './componentes/administrador/administrado
     InicioComponent,
     CrudComponent,
     AdministradorComponent,
+    CategoriasComponent,
+    MostrarPComponent,
+    MostrarCComponent,
     
   ],
   imports: [

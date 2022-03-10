@@ -16,10 +16,16 @@ export class RestServiceService {
     return this.httpcliente.get('http://127.0.0.1:3333/consulta1')
 
    }
-
- 
-
    crearProducto(objeto:any){
      return this.httpcliente.post('http://127.0.0.1:3333/crear',objeto)
    }
+
+
+   crearCategoria(objetocategoria:any){
+    return this.httpcliente.post('http://127.0.0.1:3333/crearcategoria',objetocategoria)
+  }
+  
+  obtenerCategorias(){
+    return this.httpcliente.get('http://127.0.0.1:3333/consultacategorias')
+  }
 }

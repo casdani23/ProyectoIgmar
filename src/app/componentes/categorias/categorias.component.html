@@ -1,0 +1,11 @@
+<div  class="container" >
+    <form [formGroup]="FormularioRegistro">
+      <div>
+  
+          <label  class="form-label" >Nombre Categoria</label>
+          <input type="text" class="form-control" formControlName="Nombre_Categoria" [(ngModel)]="categorias.nom_categoria" >
+  
+          </div><br>
+              <button (click)="crearCategoria()" (click)="showModal()" class="btn btn-primary">Guardar</button>
+              <a  class="btn btn-danger">Cancelar</a>
+      </form>

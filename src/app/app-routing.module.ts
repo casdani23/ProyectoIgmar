@@ -5,6 +5,10 @@ import {RegistroComponent} from './componentes/registro/registro.component';
 import {LoginComponent } from './componentes/login/login.component';
 import { InicioComponent } from './componentes/inicio/inicio.component'
 import {CrudComponent} from './componentes/crud/crud.component'
+import { CategoriasComponent } from './componentes/categorias/categorias.component';
+import {AdministradorComponent} from './componentes/administrador/administrador.component';
+import {MostrarCComponent} from './componentes/mostrar-c/mostrar-c.component'
+
 
 const routes: Routes = [
   // a path le pasamos una cadena que debe coincidir con la url del navegador
@@ -14,8 +18,14 @@ const routes: Routes = [
   { path: 'app', component: AppComponent },
   { path:'registro',component:RegistroComponent},
   {path:'login',component:LoginComponent},
-  {path: 'Administrador',component:CrudComponent}
+  {path: 'Producto',component:CrudComponent},
+  {path:'administradorcategoria',component:CategoriasComponent},
+  {path:'administrador',component:AdministradorComponent},
+  {path:'mostrarcategoria',component:MostrarCComponent}
+
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
