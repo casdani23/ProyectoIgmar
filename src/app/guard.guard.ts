@@ -11,17 +11,28 @@ import { finalize} from 'rxjs/operators'
 export class GuardGuard implements CanActivate {
 
 
-  constructor(private authService:RestServiceService,private route:Router){}
+  constructor(private authService:RestServiceService,private router:Router){}
 
 
+  redirect(flags:boolean):any{
+    if (!flags) {
+      this.router.navigate(['/login'])
+      
+    }
+ }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-    ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    ): 
+    Observable<boolean |
+     UrlTree> | 
+     Promise<boolean |
+      UrlTree> | 
+      boolean | UrlTree {
     return false
-  
 
   }
+  
  
  
  }

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { tap } from 'rxjs';
+
+
 
 
 
@@ -40,6 +42,9 @@ export class RestServiceService {
   iniciar_sesion(login:any){
     return this.httpcliente.post('http://127.0.0.1:3333/login',login)
   }
+
+  
+
 
   
  

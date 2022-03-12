@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 
+import { JwtModule } from '@auth0/angular-jwt';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistroComponent } from './componentes/registro/registro.component';

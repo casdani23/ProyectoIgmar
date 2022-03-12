@@ -41,7 +41,7 @@ export class LoginComponent{
          "Token":data.token
       
       }));
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/administrador'])
     })
   }
 }
