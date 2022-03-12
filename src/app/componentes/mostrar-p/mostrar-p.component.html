@@ -1,1 +1,18 @@
-<p>mostrar-p works!</p>
+<div class="containerproductos mb-3">
+    <table class="table table-dark  abajoArriba">
+        <thead>
+          <tr>
+          
+            <th scope="col">Nombre_Producto</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Postproducto of productos">
+            <td>{{Postproducto.nom_producto}}</td>
+            
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>

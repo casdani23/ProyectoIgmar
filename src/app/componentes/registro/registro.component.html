@@ -20,16 +20,19 @@
                 
 
                 <div class="mb-3">
-                  <label for="Usuario"  class="form-label" ng-model="Usuario">Registrar Usuario</label>
-                  <input type="text" class="form-control"  formControlName="Usuario" >
+                  <label   class="form-label" >Registrar Usuario</label>
+                  <input type="text" class="form-control" placeholder="name@example.com"   formControlName="Usuario"  [(ngModel)]="login.email">
+                  <label *ngIf="this.FormularioRegistro.get('Usuario')?.errors?.['email']">
+                    introduzca un email 
+                  </label>
                 </div>
 
-                    <label for="contra" class="form-label"  ng-model="password">Registro Password</label>
-                    <input type="password" class="form-control"formControlName="contra">
+                    <label  class="form-label">Registro Password</label>
+                    <input type="password" class="form-control"formControlName="contra"  [(ngModel)]="login.password">
                   </div>                
 
               </form>
-              <button (click)="showModal()" (click)="onSubmit()"  class="btn btn-primary">Registrarme</button>
+              <button (click)="showModal()" (click)="crearusuario()"  class="btn btn-primary">Registrarme</button>
               <a routerLink="/login" class="btn btn-danger">Iniciar Sesion</a>
 
 

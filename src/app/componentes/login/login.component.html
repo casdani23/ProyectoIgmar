@@ -12,20 +12,25 @@
     <body>
        
         <div class="container" >
-            <form>
+            <form [formGroup]="FormularioRegistro">
                 <div class="mb-3">
                 <div class="mb-3">
-                  <label for="Usuario"  class="form-label" ng-model="Usuario">Usuario</label>
-                  <input type="text" class="form-control"  formControlName="Usuario" >
+                    
+                  <label for="Usuario"  class="form-label">Usuario</label>
+                  <input type="text" class="form-control"  formControlName="Usuario"  [(ngModel)]="login.email" >
+                  <label *ngIf="this.FormularioRegistro.get('Usuario')?.errors?.['email']">
+                    (El mail no es válido)
+                  </label>
                 </div>
+                
 
-                    <label for="contra" class="form-label"  ng-model="password">Password</label>
-                    <input type="password" class="form-control"formControlName="contra">
+                    <label for="contra" class="form-label" >Password</label>
+                    <input type="password" class="form-control"formControlName="contra"  [(ngModel)]="login.password">
                   </div>                
 
               </form>
-              <button type="submit" class="btn btn-primary"  >Registrarme</button>
-              <a routerLink="/login" class="btn btn-danger">Iniciar Sesion</a>
+              <button type="submit"  class="btn btn-primary">Registrarme</button>
+              <a routerLink="/login" class="btn btn-danger" (click)="iniciar()">Iniciar Sesion</a>
             
 
               

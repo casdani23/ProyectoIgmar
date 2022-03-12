@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http'
-
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +15,7 @@ import { AdministradorComponent } from './componentes/administrador/administrado
 import { CategoriasComponent } from './componentes/categorias/categorias.component';
 import { MostrarPComponent } from './componentes/mostrar-p/mostrar-p.component';
 import { MostrarCComponent } from './componentes/mostrar-c/mostrar-c.component';
+import { LocalstorageComponent } from './localstorage/localstorage.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,9 @@ import { MostrarCComponent } from './componentes/mostrar-c/mostrar-c.component';
     CategoriasComponent,
     MostrarPComponent,
     MostrarCComponent,
+    LocalstorageComponent,
+    
+    
     
   ],
   imports: [

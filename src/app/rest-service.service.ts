@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+
+
+@Injectable()
 export class RestServiceService {
 
-  constructor(private httpcliente:HttpClient) {
 
-   }
+
+  constructor(private httpcliente:HttpClient) {
+    
+    }
+   
 
   
    obtenerDatos2(){
@@ -28,4 +32,15 @@ export class RestServiceService {
   obtenerCategorias(){
     return this.httpcliente.get('http://127.0.0.1:3333/consultacategorias')
   }
+
+  insertarcliente(cliente:any){
+    return this.httpcliente.post('http://127.0.0.1:3333/register',cliente)
+  }
+
+  iniciar_sesion(login:any){
+    return this.httpcliente.post('http://127.0.0.1:3333/login',login)
+  }
+
+  
+ 
 }

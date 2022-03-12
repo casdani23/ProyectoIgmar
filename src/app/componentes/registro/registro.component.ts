@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert';
+import { RestServiceService} from '../../rest-service.service';
+import { Router } from '@angular/router';
+import { modeloregistro } from 'src/app/modeloregistro';
 
 
 
@@ -10,16 +13,24 @@ import Swal from 'sweetalert';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent  {
-  title="Registo"
-   
-     
+  
+  login:modeloregistro={
+    "email":'',
+    "password":'',
+    "rol":'',
+  }
 
   resultado!:string;
   FormularioRegistro= new FormGroup({
 
-    Usuario: new FormControl(null,[Validators.required  ]),
+    Usuario: new FormControl(null,[Validators.required,Validators.email]),
     contra: new FormControl(null,[Validators.required]),
   })
+
+  constructor(private restservice:RestServiceService,private router:Router)
+  {
+      
+  }
 
   showModal(){
     if(this.FormularioRegistro.valid){
@@ -39,14 +50,11 @@ export class RegistroComponent  {
   
   }
   
-  onSubmit(){
-    if(this.FormularioRegistro.valid){
-      console.log(this.FormularioRegistro.value);
-
-    }
-    else{
-      
-    }
-  }
+ 
+  crearusuario(){
+    this.restservice.insertarcliente(this.login).subscribe((data:any)=>{
+      this.login=data;
+    })
+ }
 
 }

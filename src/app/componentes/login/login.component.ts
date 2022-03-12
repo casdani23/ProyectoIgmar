@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { RestServiceService} from '../../rest-service.service'
+import { Router } from '@angular/router';
+import { RestServiceService} from '../../rest-service.service';
+import { FormGroup,FormControl,Validators} from '@angular/forms';
+import { modeloregistro } from 'src/app/modeloregistro';
+import { Data, Datos} from 'src/app/modelodata'
+
+
 
 
 @Component({
@@ -9,17 +15,35 @@ import { RestServiceService} from '../../rest-service.service'
 })
 export class LoginComponent{
 
-  constructor(private restservice:RestServiceService){
-          
-       } 
-       evento(){
-        this.restservice.obtenerDatos2().subscribe(restservice =>{
-          console.log(restservice)
-        }); 
-       
-        
-         return this.restservice.obtenerDatos2();
+ 
+      login:modeloregistro={
+        "email":'',
+        "password":'',
+        "rol":''
       }
-      
+  
+  FormularioRegistro= new FormGroup({
 
+    Usuario: new FormControl(null,[Validators.required,Validators.email]),
+    contra: new FormControl(null,[Validators.required]),
+  })
+
+  constructor(private restservice:RestServiceService,private router:Router)
+  {
+      
+  }
+ 
+  iniciar(){
+    this.restservice.iniciar_sesion(this.login).subscribe((data:Data)=>{
+      //this.login
+      
+      localStorage.setItem('Usuario', JSON.stringify({
+         "Token":data.token
+      
+      }));
+      this.router.navigate(['/inicio'])
+    })
+  }
 }
+  
+
