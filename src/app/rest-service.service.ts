@@ -42,7 +42,12 @@ export class RestServiceService {
   iniciar_sesion(login:any){
     return this.httpcliente.post('http://127.0.0.1:3333/login',login)
   }
-
+  crear_guiso(objetoGuiso:any){
+    return this.httpcliente.post('http://127.0.0.1:3333/crearguiso',objetoGuiso)
+  }
+  obtenerGuiso(){
+    return  this.httpcliente.get('http://127.0.0.1:3333/obtenerguiso')
+  }
   
 
 

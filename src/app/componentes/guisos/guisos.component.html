@@ -1,0 +1,11 @@
+<div  class="container" >
+  <form [formGroup]="FormularioRegistro">
+    <div>
+
+        <label  class="form-label" >Nombre del guiso</label>
+        <input type="text" class="form-control" formControlName="nombre_guiso" [(ngModel)]="guisos.guiso">
+
+        </div><br>
+            <button (click)="insertarGuis()" class="btn btn-primary">Guardar</button>
+            <a  class="btn btn-danger">Cancelar</a>
+    </form>

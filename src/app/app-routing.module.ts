@@ -8,8 +8,10 @@ import {CrudComponent} from './componentes/crud/crud.component'
 import { CategoriasComponent } from './componentes/categorias/categorias.component';
 import {AdministradorComponent} from './componentes/administrador/administrador.component';
 import {MostrarCComponent} from './componentes/mostrar-c/mostrar-c.component';
-import { MostrarPComponent} from './componentes/mostrar-p/mostrar-p.component'
-import { GuardGuard} from './guard.guard'
+import { MostrarPComponent} from './componentes/mostrar-p/mostrar-p.component';
+import { GuardGuard} from './guard.guard';
+import { GuisosComponent } from './componentes/guisos/guisos.component';
+import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
 
 
 
@@ -22,7 +24,7 @@ const routes: Routes = [
   { path: 'app', component: AppComponent },
   { path:'registro',component:RegistroComponent},
   {path:'login',component:LoginComponent},
-  {path: 'Producto',component:CrudComponent,canActivate:[GuardGuard]},
+  {path: 'Producto',component:CrudComponent},
   {path:'administradorcategoria',component:CategoriasComponent},
   {path:
     'administrador',
@@ -31,10 +33,13 @@ const routes: Routes = [
     },
 
     component:AdministradorComponent,
-    canActivate:[GuardGuard]
+    
 },
-  {path:'mostrarcategoria',component:MostrarCComponent,canActivate:[GuardGuard]},
-  {path:'mostrarproducto',component:MostrarPComponent,canActivate:[GuardGuard]},
+  {path:'mostrarcategoria',component:MostrarCComponent},
+  {path:'mostrarproducto',component:MostrarPComponent},
+  {path:'guisos',component:GuisosComponent},
+  {path:'mostrarGuiso',component:MostrarGComponent}
+
 
 
 

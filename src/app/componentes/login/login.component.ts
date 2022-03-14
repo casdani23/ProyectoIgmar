@@ -38,11 +38,16 @@ export class LoginComponent{
       //this.login
       
       localStorage.setItem('Usuario', JSON.stringify({
-         "Token":data.token
+
+
+        
+         "Token":data.token,
+        
       
       }));
-      this.router.navigate(['/administrador'])
     })
+    this.router.navigate(['/inicio'])
+
   }
 }
   

@@ -17,6 +17,8 @@ import { CategoriasComponent } from './componentes/categorias/categorias.compone
 import { MostrarPComponent } from './componentes/mostrar-p/mostrar-p.component';
 import { MostrarCComponent } from './componentes/mostrar-c/mostrar-c.component';
 import { LocalstorageComponent } from './localstorage/localstorage.component';
+import { GuisosComponent } from './componentes/guisos/guisos.component';
+import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { LocalstorageComponent } from './localstorage/localstorage.component';
     MostrarPComponent,
     MostrarCComponent,
     LocalstorageComponent,
+    GuisosComponent,
+    MostrarGComponent,
     
     
     
