@@ -37,6 +37,7 @@ import { VendedorComponent } from './componentes/vendedor/vendedor.component';
     GuisosComponent,
     MostrarGComponent,
     VendedorComponent,
+    
 
 
 

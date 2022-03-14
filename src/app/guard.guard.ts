@@ -1,8 +1,8 @@
+import { prepareSyntheticListenerFunctionName } from '@angular/compiler/src/render3/util';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RestServiceService} from 'src/app/rest-service.service'
-import { finalize} from 'rxjs/operators'
 
 
 @Injectable({
@@ -29,7 +29,16 @@ export class GuardGuard implements CanActivate {
      Promise<boolean |
       UrlTree> | 
       boolean | UrlTree {
-    return false
+        if(!this.authService.traerusuario()){
+          return this.router.navigate(['/inicio']).then(()=>false);
+        }
+     
+        this.authService.traerusuario().subscribe((data:any)=>{
+          return true
+        }, error=>{
+          return false
+        })
+
 
   }
   

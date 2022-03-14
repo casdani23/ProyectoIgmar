@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {RouterModule,Routes } from '@angular/router';
+import {RouterModule,Routes,CanActivate } from '@angular/router';
 import {AppComponent } from './app.component';
 import {RegistroComponent} from './componentes/registro/registro.component';
 import {LoginComponent } from './componentes/login/login.component';
@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path: 'Producto',component:CrudComponent},
   {path:'administradorcategoria',component:CategoriasComponent},
-  {path:'administrador',component:AdministradorComponent},
+  {path:'administrador',component:AdministradorComponent,canActivate:[GuardGuard]},
   {path:'mostrarcategoria',component:MostrarCComponent},
   {path:'mostrarproducto',component:MostrarPComponent},
   {path:'guisos',component:GuisosComponent},

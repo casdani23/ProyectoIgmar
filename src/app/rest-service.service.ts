@@ -51,6 +51,10 @@ export class RestServiceService {
   modificarGuiso(id:any){
     return this.httpcliente.put('http://127.0.0.1:3333/modificarguiso',id)
   }
+  traerusuario(){
+    return this.httpcliente.get<any>('http://127.0.0.1:3333/token')
+  }
+ 
 
 
 
