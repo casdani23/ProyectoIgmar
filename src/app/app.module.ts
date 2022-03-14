@@ -19,6 +19,7 @@ import { MostrarCComponent } from './componentes/mostrar-c/mostrar-c.component';
 import { LocalstorageComponent } from './localstorage/localstorage.component';
 import { GuisosComponent } from './componentes/guisos/guisos.component';
 import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
+import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +36,10 @@ import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
     LocalstorageComponent,
     GuisosComponent,
     MostrarGComponent,
-    
-    
-    
+    VendedorComponent,
+
+
+
   ],
   imports: [
     BrowserModule,

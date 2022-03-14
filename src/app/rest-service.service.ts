@@ -13,11 +13,11 @@ export class RestServiceService {
 
 
   constructor(private httpcliente:HttpClient) {
-    
-    }
-   
 
-  
+    }
+
+
+
    obtenerDatos2(){
     return this.httpcliente.get('http://127.0.0.1:3333/consulta1')
 
@@ -30,7 +30,7 @@ export class RestServiceService {
    crearCategoria(objetocategoria:any){
     return this.httpcliente.post('http://127.0.0.1:3333/crearcategoria',objetocategoria)
   }
-  
+
   obtenerCategorias(){
     return this.httpcliente.get('http://127.0.0.1:3333/consultacategorias')
   }
@@ -48,9 +48,12 @@ export class RestServiceService {
   obtenerGuiso(){
     return  this.httpcliente.get('http://127.0.0.1:3333/obtenerguiso')
   }
-  
+  modificarGuiso(id:any){
+    return this.httpcliente.put('http://127.0.0.1:3333/modificarguiso',id)
+  }
 
 
-  
- 
+
+
+
 }

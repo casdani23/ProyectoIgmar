@@ -12,6 +12,7 @@ import { MostrarPComponent} from './componentes/mostrar-p/mostrar-p.component';
 import { GuardGuard} from './guard.guard';
 import { GuisosComponent } from './componentes/guisos/guisos.component';
 import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
+import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 
 
 
@@ -26,19 +27,12 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path: 'Producto',component:CrudComponent},
   {path:'administradorcategoria',component:CategoriasComponent},
-  {path:
-    'administrador',
-    data:{
-      rol:'administrador'
-    },
-
-    component:AdministradorComponent,
-    
-},
+  {path:'administrador',component:AdministradorComponent},
   {path:'mostrarcategoria',component:MostrarCComponent},
   {path:'mostrarproducto',component:MostrarPComponent},
   {path:'guisos',component:GuisosComponent},
-  {path:'mostrarGuiso',component:MostrarGComponent}
+  {path:'mostrarGuiso',component:MostrarGComponent},
+  {path:'modificarGuiso',component:VendedorComponent}
 
 
 
