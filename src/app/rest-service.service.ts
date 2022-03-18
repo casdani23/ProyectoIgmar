@@ -54,7 +54,7 @@ export class RestServiceService{
     return this.httpcliente.put('http://127.0.0.1:3333/modificarguiso',id)
   }
   gettoken(){
-   return localStorage.getItem('token')
+   return localStorage.getItem('Token')
   }
 
   verificar(){

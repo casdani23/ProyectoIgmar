@@ -19,7 +19,6 @@ export class CrudComponent {
     Producto: new FormControl(null,[Validators.required]),
     Precio: new FormControl(null,[Validators.required]),
     Cantidad: new FormControl(null,[Validators.required]),
-    Categoria: new FormControl(null,[Validators.required]),
 
   })
   showModal(){
@@ -40,26 +39,25 @@ export class CrudComponent {
   }
 
 
-    categorias:categoria[]|undefined;
 
+    producto:Postproducto[]|undefined;
 
     productos:Postproducto={
 
       "nom_producto":'',
       "precio":'',
       "cantidad":'',
-      "categoria":''
     };
 
   constructor(private restservice:RestServiceService) {
 
-    this.restservice.obtenerCategorias().subscribe((data:any)=>{
-      this.categorias=data;
+    this.restservice.obtenerDatos2().subscribe((data:any)=>{
+      this.producto=data;
     })
   }
 
   crear(){
-    console.log(this.productos.nom_producto,this.productos.precio,this.productos.cantidad,this.productos.categoria)
+    console.log(this.productos.nom_producto,this.productos.precio,this.productos.cantidad)
     this.restservice.crearProducto(this.productos).subscribe((rest:any) =>{
 
       this.productos=rest;

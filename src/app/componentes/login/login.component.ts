@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { RestServiceService} from '../../rest-service.service';
 import { FormGroup,FormControl,Validators} from '@angular/forms';
 import { modeloregistro } from 'src/app/modeloregistro';
-import { Data, Datos} from 'src/app/modelodata'
+import { Data} from 'src/app/modelodata'
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+
 
 
 
@@ -21,6 +23,8 @@ export class LoginComponent{
         "password":'',
         "rol":''
       }
+
+     
   
   FormularioRegistro= new FormGroup({
 
@@ -30,25 +34,37 @@ export class LoginComponent{
 
   constructor(private restservice:RestServiceService,private router:Router)
   {
-      
+
+    
   }
+
+ ngOnInit():void{
+   this.checkLocalstorage()
+ }
+
+ checkLocalstorage(){
+   if(localStorage.getItem('Token')){
+     this.router.navigate(['/inicio'])
+   }
+ }
  
   iniciar(){
     this.restservice.iniciar_sesion(this.login).subscribe((data:Data)=>{
-      //this.login
+      //this.logi
       
-      localStorage.setItem('Usuario', JSON.stringify({
+      
+
+        localStorage.setItem("token",data.token)
+      
 
 
-        
-         "Token":data.token,
-        
-      
-      }));
     })
+      
     this.router.navigate(['/inicio'])
+    
 
   }
+  
 }
   
 
