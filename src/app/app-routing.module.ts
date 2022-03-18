@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path: 'Producto',component:CrudComponent},
   {path:'administradorcategoria',component:CategoriasComponent},
-  {path:'administrador',component:AdministradorComponent,canActivate:[GuardGuard]},
+  {path:'administrador',component:AdministradorComponent},
   {path:'mostrarcategoria',component:MostrarCComponent},
   {path:'mostrarproducto',component:MostrarPComponent},
   {path:'guisos',component:GuisosComponent},

@@ -10,7 +10,9 @@ import Swal from 'sweetalert';
 })
 export class AdministradorComponent  {
 
-  constructor() { }
-  
-   
+  constructor(private restservice:RestServiceService) { }
+
+
+
+
  }

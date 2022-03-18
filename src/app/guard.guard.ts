@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { prepareSyntheticListenerFunctionName } from '@angular/compiler/src/render3/util';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
@@ -17,33 +18,23 @@ export class GuardGuard implements CanActivate {
   redirect(flags:boolean):any{
     if (!flags) {
       this.router.navigate(['/login'])
-      
+
     }
  }
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-    ): 
-    Observable<boolean |
-     UrlTree> | 
-     Promise<boolean |
-      UrlTree> | 
-      boolean | UrlTree {
-        if(!this.authService.traerusuario()){
-          return this.router.navigate(['/inicio']).then(()=>false);
-        }
-     
-        this.authService.traerusuario().subscribe((data:any)=>{
-          return true
-        }, error=>{
-          return false
-        })
-
-
+ canActivate(
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot):  boolean {
+   if(localStorage.getItem('token')){
+     return true
+   }
+   else{
+     this.router.navigate(['login'])
+     return false
+   }
   }
-  
- 
- 
+
+
+
  }
 
- 
+

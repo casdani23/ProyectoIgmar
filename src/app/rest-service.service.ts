@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { tap } from 'rxjs';
 
 
@@ -7,12 +7,14 @@ import { tap } from 'rxjs';
 
 
 
+
 @Injectable()
-export class RestServiceService {
+export class RestServiceService{
 
 
 
   constructor(private httpcliente:HttpClient) {
+
 
     }
 
@@ -51,10 +53,22 @@ export class RestServiceService {
   modificarGuiso(id:any){
     return this.httpcliente.put('http://127.0.0.1:3333/modificarguiso',id)
   }
-  traerusuario(){
-    return this.httpcliente.get<any>('http://127.0.0.1:3333/token')
+  gettoken(){
+   return localStorage.getItem('token')
   }
- 
+
+  verificar(){
+    /* const toke=this.gettoken()
+    console.log(toke);
+    const  h = 'Bearer'+ this.toke
+    let header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': h
+    }) */
+   return this.httpcliente.get<any>('http://127.0.0.1:3333/token')
+  }
+
+
 
 
 

@@ -13,7 +13,7 @@ import { categoria } from 'src/app/categoriamodel';
   styleUrls: ['./crud.component.css']
 })
 export class CrudComponent {
-  
+
   FormularioRegistro= new FormGroup({
 
     Producto: new FormControl(null,[Validators.required]),
@@ -35,52 +35,57 @@ export class CrudComponent {
        icon:"warning"
      })
     }
-    
-  
+
+
   }
-  
-   
+
+
     categorias:categoria[]|undefined;
 
 
     productos:Postproducto={
-     
+
       "nom_producto":'',
       "precio":'',
       "cantidad":'',
       "categoria":''
     };
-   
+
   constructor(private restservice:RestServiceService) {
 
     this.restservice.obtenerCategorias().subscribe((data:any)=>{
       this.categorias=data;
-    })   
+    })
   }
 
   crear(){
     console.log(this.productos.nom_producto,this.productos.precio,this.productos.cantidad,this.productos.categoria)
     this.restservice.crearProducto(this.productos).subscribe((rest:any) =>{
-      
+
       this.productos=rest;
-      
-    }); 
-   
-    
-  
+
+    });
   }
+  gettoken(){
+    return localStorage.getItem('token')
+   }
+
+   verificar(){
+     const toke=this.gettoken()
+     console.log(toke);
+   }
   arrayIds:any=[]
   indice = 0
   guardarValor(id:any){
     this.arrayIds[0] = id
-  }  
+  }
   onSubmit(){
     if(this.FormularioRegistro.valid){
       console.log(this.FormularioRegistro.value);
       console.log("hola")
     }
     else{
-      
+
     }
   }
 
