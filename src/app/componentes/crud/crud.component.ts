@@ -6,6 +6,7 @@ import Swal from 'sweetalert';
 
 import {Postproducto } from '../../PostProducto'
 import { categoria } from 'src/app/categoriamodel';
+import { guiso } from 'src/app/modeloGuiso';
 
 @Component({
   selector: 'app-crud',
@@ -19,6 +20,7 @@ export class CrudComponent {
     Producto: new FormControl(null,[Validators.required]),
     Precio: new FormControl(null,[Validators.required]),
     Cantidad: new FormControl(null,[Validators.required]),
+    Guiso: new FormControl(null,[Validators.required]),
 
   })
   showModal(){
@@ -39,20 +41,23 @@ export class CrudComponent {
   }
 
 
-
+    sabores:guiso[]|undefined;
     producto:Postproducto[]|undefined;
 
     productos:Postproducto={
-
       "nom_producto":'',
       "precio":'',
       "cantidad":'',
+      "guiso":''
     };
 
   constructor(private restservice:RestServiceService) {
 
     this.restservice.obtenerDatos2().subscribe((data:any)=>{
       this.producto=data;
+    })
+    this.restservice.obtenerGuiso().subscribe((guiso:any)=>{
+      this.sabores=guiso
     })
   }
 
@@ -64,14 +69,7 @@ export class CrudComponent {
 
     });
   }
-  gettoken(){
-    return localStorage.getItem('token')
-   }
 
-   verificar(){
-     const toke=this.gettoken()
-     console.log(toke);
-   }
   arrayIds:any=[]
   indice = 0
   guardarValor(id:any){

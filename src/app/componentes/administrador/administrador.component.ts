@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {  RestServiceService} from '../../rest-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert';
+import { usuario } from 'src/app/Usuario';
 
 @Component({
   selector: 'app-administrador',
@@ -10,9 +11,11 @@ import Swal from 'sweetalert';
 })
 export class AdministradorComponent  {
 
-  constructor(private restservice:RestServiceService) { }
+
+  constructor(private restservice:RestServiceService) {
 
 
 
 
+  }
  }

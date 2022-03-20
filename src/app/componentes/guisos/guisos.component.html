@@ -3,9 +3,22 @@
     <div>
 
         <label  class="form-label" >Nombre del guiso</label>
-        <input type="text" class="form-control" formControlName="nombre_guiso" [(ngModel)]="guisos.guiso">
+        <input type="text" class="form-control" formControlName="Nombre" [(ngModel)]="comida.guiso">
 
         </div><br>
-            <button (click)="insertarGuis()" class="btn btn-primary">Guardar</button>
+            <button (click)="insertarGuiso()" (click)="showModal()" class="btn btn-primary">Guardar</button>
             <a  class="btn btn-danger">Cancelar</a>
-    </form>
+    </form><br>
+    <h1>Guisos</h1>
+    <table class="table table-hover border abajoArriba">
+      <thead>
+        <tr>
+          <th scope="col">Nombre_Guiso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sabor of sabores">
+          <td>{{sabor.guiso}}</td>
+        </tr>
+      </tbody>
+    </table>

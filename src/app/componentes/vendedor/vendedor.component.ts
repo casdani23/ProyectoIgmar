@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { guiso } from 'src/app/guiso';
+import { Guis } from 'src/app/guiso';
 import { RestServiceService } from 'src/app/rest-service.service';
 
 @Component({
@@ -9,8 +9,8 @@ import { RestServiceService } from 'src/app/rest-service.service';
 })
 export class VendedorComponent implements OnInit {
 
-  guisos:guiso[]|undefined;
-  guisos1:guiso={
+  guisos:Guis[]|undefined;
+  guisos1:Guis={
     "id_guiso":'',
     "guiso":'',
     "disponible":''

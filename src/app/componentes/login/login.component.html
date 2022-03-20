@@ -10,36 +10,36 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-       
-        <div class="container" >
+
+        <div class="container card" style="height: 230px;" >
             <form [formGroup]="FormularioRegistro">
                 <div class="mb-3">
                 <div class="mb-3">
-                    
+
                   <label for="Usuario"  class="form-label">Usuario</label>
                   <input type="text" class="form-control"  formControlName="Usuario"  [(ngModel)]="login.email" >
                   <label *ngIf="this.FormularioRegistro.get('Usuario')?.errors?.['email']">
                     (El mail no es válido)
                   </label>
                 </div>
-                
+
 
                     <label for="contra" class="form-label" >Password</label>
                     <input type="password" class="form-control"formControlName="contra"  [(ngModel)]="login.password">
-                  </div>                
+                  </div>
 
               </form>
-              <button type="submit"  class="btn btn-primary">Registrarme</button>
-              <a routerLink="/login" class="btn btn-danger"  (click)="iniciar()">Iniciar Sesion</a>
-              <a routerLink="/login" class="btn btn-danger">obtener</a>
 
-            
-
-              
-             
+              <a routerLink="/login" class="btn btn-success" (click)="iniciar()">Iniciar Sesion</a>
 
 
-             
+
+
+
+
+
+
+
         </div>
         <script src="" async defer></script>
     </body>

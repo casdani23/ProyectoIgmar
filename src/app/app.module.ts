@@ -20,6 +20,7 @@ import { LocalstorageComponent } from './localstorage/localstorage.component';
 import { GuisosComponent } from './componentes/guisos/guisos.component';
 import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
+import { BebidasComponent } from './bebidas/bebidas.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { VendedorComponent } from './componentes/vendedor/vendedor.component';
     GuisosComponent,
     MostrarGComponent,
     VendedorComponent,
+    BebidasComponent,
 
 
 

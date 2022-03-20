@@ -9,35 +9,35 @@
         <link rel="stylesheet" href="/src/app/componentes/registro/registro.component.css">
     </head>
     <body>
-      
 
-        <div class="container" ng-controller="formulario">
+<div>
+        <div class="container card" style="height: 300px;width: 550px;" ng-controller="formulario">
             <form [formGroup]="FormularioRegistro">
-                
-               
+
+
                 <div class="mb-3">
 
-                
+
 
                 <div class="mb-3">
                   <label   class="form-label" >Registrar Usuario</label>
                   <input type="text" class="form-control" placeholder="name@example.com"   formControlName="Usuario"  [(ngModel)]="login.email">
                   <label *ngIf="this.FormularioRegistro.get('Usuario')?.errors?.['email']">
-                    introduzca un email 
+                    introduzca un email
                   </label>
                 </div>
 
                     <label  class="form-label">Registro Password</label>
                     <input type="password" class="form-control"formControlName="contra"  [(ngModel)]="login.password">
-                  </div>                
+                  </div>
 
               </form>
-              <button (click)="showModal()" (click)="crearusuario()"  class="btn btn-primary">Registrarme</button>
+              <button (click)="showModal()" (click)="crearusuario()"  class="btn btn-primary">Registrarme</button><br>
               <a routerLink="/login" class="btn btn-danger">Iniciar Sesion</a>
 
 
-             
-        </div>
 
+        </div>
+      </div>
     </body>
 </html>

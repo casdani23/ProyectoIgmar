@@ -13,6 +13,7 @@ import { GuardGuard} from './guard.guard';
 import { GuisosComponent } from './componentes/guisos/guisos.component';
 import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
+import { BebidasComponent } from './bebidas/bebidas.component';
 
 
 
@@ -32,7 +33,9 @@ const routes: Routes = [
   {path:'mostrarproducto',component:MostrarPComponent},
   {path:'guisos',component:GuisosComponent},
   {path:'mostrarGuiso',component:MostrarGComponent},
-  {path:'modificarGuiso',component:VendedorComponent}
+  {path:'modificarGuiso',component:VendedorComponent},
+  {path:'bebidas',component:BebidasComponent}
+
 
 
 

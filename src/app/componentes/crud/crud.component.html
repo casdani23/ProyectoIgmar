@@ -11,28 +11,35 @@
             <label  class="form-label">Cantidad</label>
             <input  type="text"  class="form-control" formControlName="Cantidad" [(ngModel)]="productos.cantidad">
 
-           
+            <label class="form-label">Guiso</label>
+            <select class="form-select" formControlName="Guiso" [(ngModel)]="productos.guiso">
+              <option [value]="sabor.id_guiso" *ngFor="let sabor of sabores" >{{sabor.guiso}}</option>
+            </select><br>
+
+
           </div>
               <button (click)="crear()" (click)="showModal()" class="btn btn-primary">Guardar</button>
               <a  class="btn btn-danger">Cancelar</a>
       </form>
       <h3> Productos</h3>
-    <hr>
+
     <div class="containerproductos mb-3">
-      <table class="table table-dark  abajoArriba">
+      <table class="table table-striped table-hover border abajoArriba">
           <thead>
             <tr>
-            
+
               <th scope="col">Nombre_Producto</th>
-              
+
+
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let Postproducto of producto">
               <td>{{Postproducto.nom_producto}}</td>
-              
+
+
             </tr>
-           
+
           </tbody>
         </table>
       </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { tap } from 'rxjs';
+import { tap, throttleTime } from 'rxjs';
 
 
 
@@ -44,7 +44,7 @@ export class RestServiceService{
   iniciar_sesion(login:any){
     return this.httpcliente.post('http://127.0.0.1:3333/login',login)
   }
-  crear_guiso(objetoGuiso:any){
+  crearGuiso(objetoGuiso:any){
     return this.httpcliente.post('http://127.0.0.1:3333/crearguiso',objetoGuiso)
   }
   obtenerGuiso(){
@@ -66,6 +66,22 @@ export class RestServiceService{
       'Authorization': h
     }) */
    return this.httpcliente.get<any>('http://127.0.0.1:3333/token')
+  }
+  crearBebida(bebida:any){
+   return this.httpcliente.post('http://127.0.0.1:3333/crearbebida',bebida)
+  }
+  obtenerBebidas(){
+    return this.httpcliente.get('http://127.0.0.1:3333/obtenerbebida')
+  }
+  traerUsuario(){
+    const token=localStorage.getItem("token")
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer'+token
+    })
+
+
+    return this.httpcliente.post('http://127.0.0.1:3333/traerusuario',{Headers:tokenHeader})
   }
 
 

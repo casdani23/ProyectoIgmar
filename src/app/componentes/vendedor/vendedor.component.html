@@ -5,12 +5,7 @@
     <select class="form-select" >
       <option [value]="guiso.id_guiso" *ngFor="let guiso of guisos" value="">{{guiso.guiso}}</option>
     </select><br>
-    <label for="">Disponibilidad</label>
-    <select class="form-select" [(ngModel)]="guisos1.disponible" name="" id="">
-      <option [value]="guiso.disponible" *ngFor="let guiso of guisos">{{guiso.disponible}}</option>
-    </select>
-    <p>1 disponible</p>
-    <p>2 no disponible</p>
+    <label for="">Disponibilidad</label><br>
     <button (click)="modificarGuiso()" class="btn btn-success">Modificar</button>
   </form>
 </div>

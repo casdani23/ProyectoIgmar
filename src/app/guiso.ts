@@ -1,4 +1,4 @@
-export interface guiso{
+export interface Guis{
   "id_guiso":'';
   "guiso":'';
   "disponible":'';
