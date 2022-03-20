@@ -15,16 +15,11 @@ export class MenusComponent implements OnInit {
 
 
   usuarios:usuario[]|undefined;
-  constructor(private restservice:RestServiceService,private route:Router) {
-     this.restservice.traerUsuario().subscribe((usua:any)=>{
-       this.usuarios=usua
+  constructor(private restservice:RestServiceService,private route:Router)
+   {
 
+  }
 
-
-
-
-     })
-   }
    cerrarSesion(){
      localStorage.removeItem("token")
      this.route.navigate(["/login"])
