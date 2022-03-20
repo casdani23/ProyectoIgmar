@@ -20,7 +20,8 @@ import { LocalstorageComponent } from './localstorage/localstorage.component';
 import { GuisosComponent } from './componentes/guisos/guisos.component';
 import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
-import { BebidasComponent } from './bebidas/bebidas.component';
+import { BebidasComponent } from './componentes/bebidas/bebidas.component';
+import { ChatComponent } from './componentes/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { BebidasComponent } from './bebidas/bebidas.component';
     MostrarGComponent,
     VendedorComponent,
     BebidasComponent,
+    ChatComponent,
 
 
 

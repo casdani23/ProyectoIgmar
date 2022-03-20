@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { bebida } from '../Bebida';
-import { RestServiceService } from '../rest-service.service';
+import { bebida } from '../../Bebida';
+import { RestServiceService } from '../../rest-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert';
 
