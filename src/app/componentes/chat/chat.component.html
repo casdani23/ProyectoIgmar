@@ -1,15 +1,17 @@
-<div class="card text-center cardcontenedor">
+<div class="card text-center cardcontenedor" *ngIf="UsuarioLogeado">
   <div class="card-header">
     Chat
   </div>
-  <div class="card-body">
-      <p class="enviado p-2">{{peticiones.comentarios}}</p>
+  <div class="card-body" id="contenedordeMensajes" class="contenedordeMensajes">
+    <div >
+      <p *ngFor="let peticion of peticiones"  class="msj p-2" [ngClass]="(UsuarioLogeado==peticion.usuario)? 'enviado':'recibido'">{{peticion.comentarios}}</p>
+    </div>
   </div>
   <form [formGroup]="FormularioRegistro" class="card-footer text-muted input-group">
       <input type="text" class="form-control" formControlName="Mensaje" placeholder="ingrese su mensaje" [(ngModel)]="comentarios.comentarios" >
       <div class="input-group-append" (click)="mandarMensaje()">
       <span class="input-group-text" id="basic-addon2">
-        <img src="https://cdn-icons-png.flaticon.com/512/786/786407.png"  class="imgEnviar" width="20px" alt="mandar mensaje">
+        <img src="https://cdn-icons-png.flaticon.com/512/786/786407.png" class="imgEnviar" width="20px" alt="mandar mensaje">
       </span>
     </div>
   </form>

@@ -52,11 +52,10 @@ export class LoginComponent{
     this.restservice.iniciar_sesion(this.login).subscribe((data:Data)=>{
         localStorage.setItem("token",data.token)
       alert("sesion iniciada correctamente")
-      this.restservice.traerUsuario().subscribe((tok:usuario)=>{
-        localStorage.setItem("email",tok.email)
-      })
+       this.restservice.traerUsuario().subscribe((usua:usuario)=>{
+         localStorage.setItem("email",usua.email)
+       })
     })
-
     this.router.navigate(['/inicio'])
   }
 

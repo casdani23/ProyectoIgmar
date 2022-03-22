@@ -1,3 +1,4 @@
 export interface comentario{
-  comentarios?:any
+  usuario:any
+  comentarios:any
 }

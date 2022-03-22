@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { tap, throttleTime } from 'rxjs';
+import { interval, tap, throttleTime } from 'rxjs';
+import { comentario } from './Comentario';
 
 
 
@@ -76,18 +77,20 @@ export class RestServiceService{
   traerUsuario(){
     const token=localStorage.getItem("token")
 
+
     const tokenHeader=new HttpHeaders({
-      'Authorization':'Bearer'+token
+      'Authorization':'Bearer '+ token
     })
 
 
-    return this.httpcliente.post('http://127.0.0.1:3333/traerusuario',{Headers:tokenHeader})
+    return this.httpcliente.get('http://127.0.0.1:3333/token',{headers:tokenHeader})
   }
-  realizarComentario(comen:any){
-    return this.httpcliente.post('http://127.0.0.1:3333/insertar',comen)
+  realizarComentario(from:comentario){
+    return this.httpcliente.post('http://127.0.0.1:3333/insertar',from)
   }
-  mostrarComentario(){
-    return this.httpcliente.get('http://127.0.0.1:3333/mostrar')
+  mostrarComentario()
+  {
+      return this.httpcliente.get('http://127.0.0.1:3333/mostrar')
   }
 
 

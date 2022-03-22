@@ -19,13 +19,38 @@ export class MenusComponent implements OnInit {
    {
 
   }
+  deshabilitar(){
+   const desha= localStorage.getItem("token")
+   if(desha){
+     return true
+   }
+   else
+   {
+     return false
+   }
+  }
+  nomostrar(){
+    const des=localStorage.getItem("email")
+    if(des){
+      return true
+    }
+    else{
+      return false
+    }
+  }
 
    cerrarSesion(){
      localStorage.removeItem("token")
-     this.route.navigate(["/login"])
+     localStorage.removeItem("email")
+     this.route.navigate(["login"])
    }
 
   ngOnInit(): void {
+
+  }
+  traerUsuario(){
+   return localStorage.getItem("email")
+
   }
 
 }

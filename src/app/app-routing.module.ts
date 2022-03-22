@@ -23,6 +23,7 @@ const routes: Routes = [
   // a path le pasamos una cadena que debe coincidir con la url del navegador
   //component le pasamos el componente que queremos que muestre path coincida con la url
   //en este caso mostrara lo que tiene el componente app.component
+  {path: '', redirectTo:'login', pathMatch:'full'},
   {path:'inicio',component:InicioComponent},
   { path: 'app', component: AppComponent },
   { path:'registro',component:RegistroComponent},
@@ -36,7 +37,7 @@ const routes: Routes = [
   {path:'mostrarGuiso',component:MostrarGComponent},
   {path:'modificarGuiso',component:VendedorComponent,canActivate:[GuardGuard]},
   {path:'bebidas',component:BebidasComponent},
-  {path:'chat',component:ChatComponent}
+  {path:'chat',component:ChatComponent,canActivate:[GuardGuard]}
 
 
 
