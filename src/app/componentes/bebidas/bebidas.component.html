@@ -6,14 +6,14 @@
         <input type="text" class="form-control"  formControlName="Bebida" [(ngModel)]="refresco.bebida" >
         </div><br>
             <button (click)="crearBebida()" (click)="showModal()" class="btn btn-primary">Guardar</button>
-            <a  class="btn btn-danger">Cancelar</a>
+            <a  class="btn btn-danger" routerLink="/administrador">Cancelar</a>
     </form>
     <div>
       <h1>Bebidas</h1>
       <table class="table table-striped table-hover border abajoArriba">
         <thead>
           <tr>
-            <th scope="col">Bebida</th>
+            <th scope="col">Bebidas en stock</th>
           </tr>
         </thead>
         <tbody>

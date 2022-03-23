@@ -11,9 +11,9 @@ export class VendedorComponent implements OnInit {
 
   guisos:Guis[]|undefined;
   guisos1:Guis={
-    "id_guiso":'',
+    
     "guiso":'',
-    "disponible":''
+
   }
   constructor(private restservice:RestServiceService) {
     this.restservice.obtenerGuiso().subscribe((data:any)=>{
@@ -25,7 +25,7 @@ export class VendedorComponent implements OnInit {
   }
   modificarGuiso(){
     console.log(this.guisos)
-    this.restservice.modificarGuiso(this.guisos1.disponible).subscribe((modi:any)=>{
+    this.restservice.modificarGuiso(this.guisos1).subscribe((modi:any)=>{
       this.guisos1=modi
     })
   }

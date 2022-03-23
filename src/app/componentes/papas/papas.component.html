@@ -2,30 +2,24 @@
   <form [formGroup]="FormularioRegistro" >
     <div>
 
-        <label  class="form-label" >Guiso</label>
-        <input type="text" class="form-control"  formControlName="Nombre_Guiso" [(ngModel)]="guisos.guiso" >
+        <label  class="form-label" >Papa</label>
+        <input type="text" class="form-control"  formControlName="Nombre_Papa" [(ngModel)]="papa.nom_papa" >
         </div><br>
-            <button (click)="crearGuiso()" (click)="showModal()" class="btn btn-primary">Guardar</button>
+            <button (click)="crearPapa()" (click)="showModal()" class="btn btn-primary">Guardar</button>
             <a  class="btn btn-danger" routerLink="/administrador">Cancelar</a>
     </form>
-    <h1>Guisos</h1>
+    <h1>Papas</h1>
     <div class="containerproductos mb-3">
       <table class="table table-striped table-hover border abajoArriba">
           <thead>
             <tr>
-
-              <th scope="col">Guisos en stock</th>
-
-
+              <th scope="col">Papas en stock</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let sabor of sabores">
-              <td>{{sabor.guiso}}</td>
-
-
+            <tr *ngFor="let papa of papas">
+              <td>{{papa.nom_papa}}</td>
             </tr>
-
           </tbody>
         </table>
       </div>

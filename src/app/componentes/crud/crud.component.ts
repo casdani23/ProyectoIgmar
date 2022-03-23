@@ -7,6 +7,7 @@ import Swal from 'sweetalert';
 import {Postproducto } from '../../PostProducto'
 import { categoria } from 'src/app/categoriamodel';
 import { guiso } from 'src/app/modeloGuiso';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-crud',
@@ -52,9 +53,11 @@ export class CrudComponent {
     };
 
   constructor(private restservice:RestServiceService) {
-
-    this.restservice.obtenerDatos2().subscribe((data:any)=>{
-      this.producto=data;
+    const contador=interval(5000)
+    contador.subscribe(()=>{
+      this.restservice.obtenerDatos2().subscribe((data:any)=>{
+        this.producto=data;
+      })
     })
     this.restservice.obtenerGuiso().subscribe((guiso:any)=>{
       this.sabores=guiso

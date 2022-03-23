@@ -15,6 +15,8 @@ import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 import { BebidasComponent } from './componentes/bebidas/bebidas.component';
 import { ChatComponent } from './componentes/chat/chat.component';
+import { DulcesComponent } from './componentes/dulces/dulces.component';
+import { PapasComponent } from './componentes/papas/papas.component';
 
 
 
@@ -28,16 +30,18 @@ const routes: Routes = [
   { path: 'app', component: AppComponent },
   { path:'registro',component:RegistroComponent},
   {path:'login',component:LoginComponent},
-  {path: 'Producto',component:CrudComponent},
+  {path: 'Producto',component:CrudComponent,canActivate:[GuardGuard]},
   {path:'administradorcategoria',component:CategoriasComponent},
   {path:'administrador',component:AdministradorComponent,canActivate:[GuardGuard]},
   {path:'mostrarcategoria',component:MostrarCComponent},
   {path:'mostrarproducto',component:MostrarPComponent},
-  {path:'guisos',component:GuisosComponent},
+  {path:'guisos',component:GuisosComponent,canActivate:[GuardGuard]},
   {path:'mostrarGuiso',component:MostrarGComponent},
   {path:'modificarGuiso',component:VendedorComponent,canActivate:[GuardGuard]},
-  {path:'bebidas',component:BebidasComponent},
-  {path:'chat',component:ChatComponent,canActivate:[GuardGuard]}
+  {path:'bebidas',component:BebidasComponent,canActivate:[GuardGuard]},
+  {path:'chat',component:ChatComponent,canActivate:[GuardGuard]},
+  {path:'dulces',component:DulcesComponent,canActivate:[GuardGuard]},
+  {path:'papas',component:PapasComponent,canActivate:[GuardGuard]}
 
 
 

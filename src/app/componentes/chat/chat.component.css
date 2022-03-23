@@ -44,3 +44,8 @@
 .contenedordeMensajes::-webkit-scrollbar{
  display: none;
 }
+.titulo{
+  margin-top: 230px;
+  margin-left: 200px;
+  font-size: 75px;
+}

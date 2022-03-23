@@ -3,7 +3,7 @@
   <form action="">
     <label class="form-label" [(ngModel)]="guisos1.guiso">Guiso</label>
     <select class="form-select" >
-      <option [value]="guiso.id_guiso" *ngFor="let guiso of guisos" value="">{{guiso.guiso}}</option>
+      <option [value]="guiso" *ngFor="let guiso of guisos" value="">{{guiso.guiso}}</option>
     </select><br>
     <label for="">Disponibilidad</label><br>
     <button (click)="modificarGuiso()" class="btn btn-success">Modificar</button>

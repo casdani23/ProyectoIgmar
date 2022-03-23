@@ -2,26 +2,26 @@
   <form [formGroup]="FormularioRegistro" >
     <div>
 
-        <label  class="form-label" >Guiso</label>
-        <input type="text" class="form-control"  formControlName="Nombre_Guiso" [(ngModel)]="guisos.guiso" >
+        <label  class="form-label" >Dulce</label>
+        <input type="text" class="form-control"  formControlName="Nombre_Dulce" [(ngModel)]="dulce.nom_dulce" >
         </div><br>
-            <button (click)="crearGuiso()" (click)="showModal()" class="btn btn-primary">Guardar</button>
+            <button (click)="crearDulce()" (click)="showModal()" class="btn btn-primary">Guardar</button>
             <a  class="btn btn-danger" routerLink="/administrador">Cancelar</a>
     </form>
-    <h1>Guisos</h1>
+    <h2>Dulces</h2>
     <div class="containerproductos mb-3">
       <table class="table table-striped table-hover border abajoArriba">
           <thead>
             <tr>
 
-              <th scope="col">Guisos en stock</th>
+              <th scope="col">Dulces en stock</th>
 
 
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let sabor of sabores">
-              <td>{{sabor.guiso}}</td>
+            <tr *ngFor="let dulce of dulces">
+              <td>{{dulce.nom_dulce}}</td>
 
 
             </tr>

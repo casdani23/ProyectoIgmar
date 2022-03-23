@@ -22,6 +22,9 @@ import { MostrarGComponent } from './componentes/mostrar-g/mostrar-g.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 import { BebidasComponent } from './componentes/bebidas/bebidas.component';
 import { ChatComponent } from './componentes/chat/chat.component';
+import { MenuprivadoComponent } from './componentes/menuprivado/menuprivado.component';
+import { DulcesComponent } from './componentes/dulces/dulces.component';
+import { PapasComponent } from './componentes/papas/papas.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { ChatComponent } from './componentes/chat/chat.component';
     VendedorComponent,
     BebidasComponent,
     ChatComponent,
+    MenuprivadoComponent,
+    DulcesComponent,
+    PapasComponent,
 
 
 

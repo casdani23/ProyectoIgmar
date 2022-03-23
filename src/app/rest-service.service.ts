@@ -22,11 +22,23 @@ export class RestServiceService{
 
 
    obtenerDatos2(){
-    return this.httpcliente.get('http://127.0.0.1:3333/consulta1')
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.httpcliente.get('http://127.0.0.1:3333/consulta1',{headers:tokenHeader})
 
    }
    crearProducto(objeto:any){
-     return this.httpcliente.post('http://127.0.0.1:3333/crear',objeto)
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+     return this.httpcliente.post('http://127.0.0.1:3333/crear',objeto,{headers:tokenHeader})
    }
 
 
@@ -39,6 +51,7 @@ export class RestServiceService{
   }
 
   insertarcliente(cliente:any){
+
     return this.httpcliente.post('http://127.0.0.1:3333/register',cliente)
   }
 
@@ -46,13 +59,31 @@ export class RestServiceService{
     return this.httpcliente.post('http://127.0.0.1:3333/login',login)
   }
   crearGuiso(objetoGuiso:any){
-    return this.httpcliente.post('http://127.0.0.1:3333/crearguiso',objetoGuiso)
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.httpcliente.post('http://127.0.0.1:3333/crearguiso',objetoGuiso,{headers:tokenHeader})
   }
   obtenerGuiso(){
-    return  this.httpcliente.get('http://127.0.0.1:3333/obtenerguiso')
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return  this.httpcliente.get('http://127.0.0.1:3333/obtenerguiso',{headers:tokenHeader})
   }
   modificarGuiso(id:any){
-    return this.httpcliente.put('http://127.0.0.1:3333/modificarguiso',id)
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.httpcliente.put('http://127.0.0.1:3333/modificarguiso',id,{headers:tokenHeader})
   }
   gettoken(){
    return localStorage.getItem('Token')
@@ -69,10 +100,22 @@ export class RestServiceService{
    return this.httpcliente.get<any>('http://127.0.0.1:3333/token')
   }
   crearBebida(bebida:any){
-   return this.httpcliente.post('http://127.0.0.1:3333/crearbebida',bebida)
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+   return this.httpcliente.post('http://127.0.0.1:3333/crearbebida',bebida,{headers:tokenHeader})
   }
   obtenerBebidas(){
-    return this.httpcliente.get('http://127.0.0.1:3333/obtenerbebida')
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.httpcliente.get('http://127.0.0.1:3333/obtenerbebida',{headers:tokenHeader})
   }
   traerUsuario(){
     const token=localStorage.getItem("token")
@@ -86,11 +129,60 @@ export class RestServiceService{
     return this.httpcliente.get('http://127.0.0.1:3333/token',{headers:tokenHeader})
   }
   realizarComentario(from:comentario){
-    return this.httpcliente.post('http://127.0.0.1:3333/insertar',from)
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.httpcliente.post('http://127.0.0.1:3333/insertar',from,{headers:tokenHeader})
   }
   mostrarComentario()
   {
-      return this.httpcliente.get('http://127.0.0.1:3333/mostrar')
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+      return this.httpcliente.get('http://127.0.0.1:3333/mostrar',{headers:tokenHeader})
+  }
+
+  crearDulce(obje:any){
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.httpcliente.post('http://127.0.0.1:3333/creardulce',obje,{headers:tokenHeader})
+  }
+  mostrarDulce(){
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.httpcliente.get('http://127.0.0.1:3333/obtenerdulce',{headers:tokenHeader})
+  }
+  crearPapa(papa:any){
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.httpcliente.post('http://127.0.0.1:3333/crearpapa',papa,{headers:tokenHeader})
+  }
+  mostrarPapa(){
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.httpcliente.get('http://127.0.0.1:3333/obtenerpapa',{headers:tokenHeader})
   }
 
 

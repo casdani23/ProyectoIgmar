@@ -3,6 +3,8 @@ import { RestServiceService} from '../../rest-service.service';
 import { FormGroup,FormControl,Validators} from '@angular/forms';
 import { guiso } from 'src/app/modeloGuiso';
 import Swal from 'sweetalert';
+import { Guis } from 'src/app/guiso';
+import { interval } from 'rxjs';
 @Component({
   selector: 'app-guisos',
   templateUrl: './guisos.component.html',
@@ -10,18 +12,26 @@ import Swal from 'sweetalert';
 })
 export class GuisosComponent implements OnInit {
 
+  guisos:Guis={
+    "guiso":''
+  }
   sabores:guiso[]|undefined;
 
-  FormularioRegistro= new FormGroup({
 
-    Nombre: new FormControl(null,[Validators.required,Validators.email]),
+
+  FormularioRegistro= new FormGroup({
+    Nombre_Guiso: new FormControl(null,[Validators.required]),
   })
 
   constructor(private restService:RestServiceService) {
-     this.restService.obtenerGuiso().subscribe((gu:any)=>{
-       this.sabores=gu
-     })
-   }
+    const contador=interval(3000)
+    contador.subscribe(()=>{
+      this.restService.obtenerGuiso().subscribe((guis:any)=>{
+        this.sabores=guis
+      })
+    })
+
+  }
    showModal(){
     if(this.FormularioRegistro.valid){
       Swal({
@@ -38,22 +48,19 @@ export class GuisosComponent implements OnInit {
 
 
   }
+  crearGuiso(){
+    this.restService.crearGuiso(this.guisos).subscribe((gu:any)=>{
+      this.guisos=gu
+      this.guisos.guiso=""
+    })
+  }
 
   ngOnInit(): void {
   }
 
-  comida:guiso={
 
-    "id_guiso":'',
-    "guiso":''
 
-  };
-  insertarGuiso(){
-    this.restService.crearGuiso(this.comida).subscribe((guis:any) =>{
-      this.comida=guis;
 
-    });
-  }
 
 
 }

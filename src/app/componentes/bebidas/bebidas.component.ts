@@ -3,6 +3,7 @@ import { bebida } from '../../Bebida';
 import { RestServiceService } from '../../rest-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-bebidas',
@@ -41,9 +42,12 @@ export class BebidasComponent implements OnInit {
   }
 
   constructor(private restservice:RestServiceService) {
-    this.restservice.obtenerBebidas().subscribe((bebida:any)=>{
-      this.refrescos=bebida
+    const contador=interval(3000).subscribe(()=>{
+      this.restservice.obtenerBebidas().subscribe((bebida:any)=>{
+        this.refrescos=bebida
+      })
     })
+
 
 
   }
